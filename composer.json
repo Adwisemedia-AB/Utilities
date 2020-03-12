@@ -1,0 +1,30 @@
+{
+    "name": "adwisemedia/utilities",
+    "description": "Helper/utility library for WordPress and common plugins.",
+    "type": "library",
+    "require": {
+        "php": ">=7.3"
+    },
+    "authors": [
+        {
+            "name": "Jan Thore Skjelfjord",
+            "email": "jt@adwisemedia.se"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Adwisemedia\\": "src/"
+        }
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^3.5"
+    },
+    "scripts": {
+        "lint": [
+            "phpcs --ignore=vendor,tests --extensions=php --standard=PSR12 ."
+        ],
+        "lint:fix": [
+            "phpcbf --ignore=vendor,tests --extensions=php --standard=PSR12 ."
+        ]
+    }
+}
