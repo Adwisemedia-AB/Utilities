@@ -1,6 +1,6 @@
 <?php
 
-namespace Adwisemedia\Helpers;
+namespace Adwisemedia\Utilities;
 
 class Color
 {
@@ -84,7 +84,7 @@ class Color
      */
     public static function hexToHsl($hex)
     {
-        $rgb = hex_to_rgb($hex, 'array');
+        $rgb = self::hexToRgb($hex, 'array');
         list( $r, $g, $b ) = $rgb;
 
         $oldR = $r;

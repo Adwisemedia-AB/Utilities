@@ -2,7 +2,7 @@
 
 namespace Adwisemedia\Utilities;
 
-class Util
+class General
 {
     public static function pp($print, $wp_die = false)
     {
@@ -15,21 +15,6 @@ class Util
         }
     }
 
-     /**
-     * Helper function to find and replace last occurence of a word in string.
-     * @return type
-     */
-    public static function strLReplace($search, $replace, $subject)
-    {
-        $pos = strrpos($subject, $search);
-
-        if ($pos !== false) {
-            $subject = substr_replace($subject, $replace, $pos, strlen($search));
-        }
-
-        return $subject;
-    }
-
     /**
      * Parse string like "title:Hello world|weekday:Monday" to array( 'title' => 'Hello World', 'weekday' => 'Monday' )
      *
@@ -39,8 +24,10 @@ class Util
      * @since 4.2
      * @return array
      */
-    public static function buildLink($value, $default = ['url' => false, 'title' => false, 'target' => '_self', 'rel' => ''])
-    {
+    public static function buildLink(
+        $value,
+        $default = ['url' => false, 'title' => false, 'target' => '_self', 'rel' => '']
+    ) {
         $result = $default;
 
         if (gettype($value) === 'string') {

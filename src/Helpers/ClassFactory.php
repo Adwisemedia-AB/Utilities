@@ -1,6 +1,6 @@
 <?php
 
-namespace Adwisemedia\Utilities;
+namespace Adwisemedia\Helpers;
 
 class ClassFactory
 {
@@ -44,10 +44,6 @@ class ClassFactory
      * @since 1.0.0
      */
     private $utility_prefix = 'u-';
-
-    public function __construct()
-    {
-    }
 
     public function add($class = '')
     {
