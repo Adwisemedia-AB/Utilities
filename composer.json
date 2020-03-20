@@ -2,6 +2,7 @@
     "name": "adwisemedia/utilities",
     "description": "Helper/utility library for WordPress and common plugins.",
     "type": "library",
+    "license": "MIT",
     "require": {
         "php": ">=7.3"
     },
