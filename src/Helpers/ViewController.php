@@ -9,7 +9,7 @@ if (! defined('ABSPATH')) {
 // phpcs:enable // phpcs:ignore
 
 use Adwisemedia\Utilities\General;
-use Adwisemedia\Helpers\AttrFactory;
+use Adwisemedia\Helpers\AttributeFactory;
 use Adwisemedia\Helpers\ClassFactory;
 
 class ViewController
@@ -142,7 +142,7 @@ class ViewController
             $classes->add($this->class);
         }
 
-        $attr = new AttrFactory();
+        $attr = new AttributeFactory();
         $attr->add('class', $classes->get());
 
         if ($this->role) {
