@@ -1,6 +1,6 @@
 <?php
 
-namespace Adwisemedia\Plugin\WooCommerce;
+namespace Adwisemedia\Plugins\WooCommerce;
 
 class Conditional
 {

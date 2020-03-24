@@ -1,6 +1,6 @@
 <?php
 
-namespace Adwisemedia\Plugin\ACF;
+namespace Adwisemedia\Plugins\ACF;
 
 class Conditional
 {

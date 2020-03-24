@@ -1,6 +1,6 @@
 <?php
 
-namespace Adwisemedia\WordPress\Walker;
+namespace Adwisemedia\WordPress\Walkers;
 
 class DefaultNav extends \Walker_Nav_Menu
 {
