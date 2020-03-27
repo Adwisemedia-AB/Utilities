@@ -50,8 +50,11 @@ class ViewController
      * @since 1.0.0
      */
     private $defaults = [
-        'class' => false,
         'attributes' => false,
+        'class' => false,
+        'id' => false,
+        'role' => false,
+        'aria_label' => false,
     ];
 
 
@@ -139,7 +142,9 @@ class ViewController
         $classes->add($this->default_class);
 
         if ($this->class) {
-            $classes->add($this->class);
+            foreach (explode(' ', $this->class) as $c) {
+                $classes->add($c);
+            }
         }
 
         $attr = new AttributeFactory();
@@ -147,6 +152,14 @@ class ViewController
 
         if ($this->role) {
             $attr->add('role', $this->role);
+        }
+
+        if ($this->id) {
+            $attr->add('id', $this->id);
+        }
+
+        if ($this->aria_label) {
+            $attr->add('aria-label', $this->aria_label);
         }
 
         if ($this->attributes) {

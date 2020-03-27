@@ -50,13 +50,13 @@ class ClassFactory
         if (is_array($class)) {
             foreach ($class as $c) {
                 if ($c !== '' && ! in_array($c, $this->classes)) {
-                    $this->classes[] = $c;
+                    $this->classes[] = trim($c);
                     $this->classes = array_unique($this->classes);
                 }
             }
         } else {
             if ($class !== '' && ! in_array($class, $this->classes)) {
-                $this->classes[] = $class;
+                $this->classes[] = trim($class);
                 $this->classes = array_unique($this->classes);
             }
         }
