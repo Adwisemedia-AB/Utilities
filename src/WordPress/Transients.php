@@ -39,11 +39,19 @@ class Transients
 
     public static function get($transient)
     {
+        if (self::disabled()) {
+            return false;
+        }
+
         return get_transient(self::name($transient));
     }
 
     public static function set($transient, $value, $expiration = null)
     {
+        if (self::disabled()) {
+            return false;
+        }
+
         $expiration = $expiration !== null ? $expiration : self::$default_expiration;
         return set_transient(self::name($transient), $value, $expiration);
     }
@@ -86,5 +94,18 @@ class Transients
         $name = sprintf('%1$s_%2$s_%3$s', self::$prefix, $transient, self::$lang);
         $name = str_replace('-', '_', $name);
         return $name;
+    }
+
+    private static function disabled()
+    {
+        if (
+            defined('WP_DISABLE_TRANSIENTS') &&
+            WP_DISABLE_TRANSIENTS === true
+        ) {
+            return true;
+        } else {
+        }
+
+        return false;
     }
 }
