@@ -33,7 +33,6 @@ class Transients
 
     public function __construct()
     {
-        wp_die();
         $this->setupLang();
         $this->setupActions();
     }
