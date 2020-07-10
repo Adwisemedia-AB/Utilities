@@ -33,32 +33,33 @@ class Transients
 
     public function __construct()
     {
+        wp_die();
         $this->setupLang();
         $this->setupActions();
     }
 
-    public static function get($transient)
+    public static function get($transient, $ignore_language = false)
     {
         if (self::disabled()) {
             return false;
         }
 
-        return get_transient(self::name($transient));
+        return get_transient(self::name($transient, $ignore_language = false));
     }
 
-    public static function set($transient, $value, $expiration = null)
+    public static function set($transient, $value, $expiration = null, $ignore_language = false)
     {
         if (self::disabled()) {
             return false;
         }
 
         $expiration = $expiration !== null ? $expiration : self::$default_expiration;
-        return set_transient(self::name($transient), $value, $expiration);
+        return set_transient(self::name($transient, $ignore_language), $value, $expiration);
     }
 
-    public static function delete($transient)
+    public static function delete($transient, $ignore_language = false)
     {
-        return delete_transient(self::name($transient));
+        return delete_transient(self::name($transient, $ignore_language));
     }
 
     public static function deleteAll()
@@ -89,9 +90,14 @@ class Transients
         }
     }
 
-    public static function name($transient)
+    public static function name($transient, $ignore_language = false)
     {
-        $name = sprintf('%1$s_%2$s_%3$s', self::$prefix, $transient, self::$lang);
+        if ($ignore_language) {
+            $name = sprintf('%1$s_%2$s', self::$prefix, $transient);
+        } else {
+            $name = sprintf('%1$s_%2$s_%3$s', self::$prefix, $transient, self::$lang);
+        }
+
         $name = str_replace('-', '_', $name);
         return $name;
     }
@@ -103,7 +109,6 @@ class Transients
             WP_DISABLE_TRANSIENTS === true
         ) {
             return true;
-        } else {
         }
 
         return false;
