@@ -43,7 +43,7 @@ class Transients
             return false;
         }
 
-        return get_transient(self::name($transient, $ignore_language = false));
+        return get_transient(self::name($transient, $ignore_language));
     }
 
     public static function set($transient, $value, $expiration = null, $ignore_language = false)
