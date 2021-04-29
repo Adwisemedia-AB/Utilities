@@ -6,4 +6,22 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Adwisemedia\\Exceptions\\UnlinkException' => $baseDir . '/src/Exceptions/UnlinkException.php',
+    'Adwisemedia\\Helpers\\Ajax' => $baseDir . '/src/Helpers/Ajax.php',
+    'Adwisemedia\\Helpers\\AttributeFactory' => $baseDir . '/src/Helpers/AttributeFactory.php',
+    'Adwisemedia\\Helpers\\ClassFactory' => $baseDir . '/src/Helpers/ClassFactory.php',
+    'Adwisemedia\\Helpers\\InlineStyleFactory' => $baseDir . '/src/Helpers/InlineStyleFactory.php',
+    'Adwisemedia\\Helpers\\ViewController' => $baseDir . '/src/Helpers/ViewController.php',
+    'Adwisemedia\\Plugins\\ACF\\Conditional' => $baseDir . '/src/Plugins/ACF/Conditional.php',
+    'Adwisemedia\\Plugins\\WooCommerce\\Conditional' => $baseDir . '/src/Plugins/WooCommerce/Conditional.php',
+    'Adwisemedia\\Utilities\\Arr' => $baseDir . '/src/Utilities/Arr.php',
+    'Adwisemedia\\Utilities\\Color' => $baseDir . '/src/Utilities/Color.php',
+    'Adwisemedia\\Utilities\\Dir' => $baseDir . '/src/Utilities/Dir.php',
+    'Adwisemedia\\Utilities\\General' => $baseDir . '/src/Utilities/General.php',
+    'Adwisemedia\\Utilities\\JSON' => $baseDir . '/src/Utilities/JSON.php',
+    'Adwisemedia\\Utilities\\Str' => $baseDir . '/src/Utilities/Str.php',
+    'Adwisemedia\\WordPress\\Transients' => $baseDir . '/src/WordPress/Transients.php',
+    'Adwisemedia\\WordPress\\Walkers\\DefaultNav' => $baseDir . '/src/WordPress/Walkers/DefaultNav.php',
+    'Adwisemedia\\WordPress\\Walkers\\SlideNav' => $baseDir . '/src/WordPress/Walkers/SlideNav.php',
+    'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
 );

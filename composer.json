@@ -3,8 +3,10 @@
     "description": "Helper/utility library for WordPress and common plugins.",
     "type": "library",
     "license": "MIT",
+    "version": "v0.1.9",
     "require": {
-        "php": ">=7.3"
+        "php": ">=7.3",
+        "ext-json": "*"
     },
     "authors": [
         {

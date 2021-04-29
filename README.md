@@ -4,7 +4,7 @@ Adwisemedia Utilities is a simple Composer package adding a variety of useful va
 
 ## Requirements
 
-- [PHP](https://secure.php.net/manual/en/install.php) >= 7.1.3
+- [PHP](https://secure.php.net/manual/en/install.php) >= 7.3
 - [Composer](https://getcomposer.org/download/)
 
 ## Installation
@@ -14,7 +14,3 @@ Install via Composer:
 ```bash
 $ composer require adwisemedia/utilities
 ```
-
-## License
-
-Blade Directives is provided under the [MIT License](https://github.com/Adwisemedia-AB/blade-directives/blob/master/LICENSE.md).

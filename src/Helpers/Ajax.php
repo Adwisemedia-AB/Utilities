@@ -3,14 +3,14 @@
 namespace Adwisemedia\Helpers;
 
 // phpcs:disable
-if (! defined('ABSPATH')) {
+if (!defined('ABSPATH')) {
     exit;
 }
+
 // phpcs:enable
 
 class Ajax
 {
-
     /**
      * Contains Ajax Response
      */
@@ -53,7 +53,7 @@ class Ajax
             wp_die('', '', ['response' => null]);
         }
 
-        if (! wp_doing_ajax()) {
+        if (!wp_doing_ajax()) {
             die();
         }
     }

@@ -22,12 +22,9 @@ class General
      * @param array $default
      *
      * @since 4.2
-     * @return array
+     * @return object
      */
-    public static function buildLink(
-        $value,
-        $default = ['url' => false, 'title' => false, 'target' => '_self', 'rel' => '']
-    ) {
+    public static function buildLink($value, $default = ['url' => false, 'title' => false, 'target' => '_self', 'rel' => '']) {
         $result = $default;
 
         if (gettype($value) === 'string') {
@@ -63,33 +60,26 @@ class General
 
     /**
      * Parse array, all string values that are "true" or "false" will be returned as booleans.
+     * IMPORTANT: Keeping this here for backward compatibility, function moved to Arr class.
      *
-     * @param array &$atts
+     * @param array &$array
+     *
+     * @return void
      */
-    public static function parseBool(&$atts)
+    public static function parseBool(&$array)
     {
-        if (! is_array($atts)) {
-            return $atts;
-        }
-
-        array_walk_recursive($atts, function (&$a) {
-            if ($a === "true") {
-                $a = true;
-            } elseif ($a === "false") {
-                $a = false;
-            }
-        });
+        Arr::parseBool($array);
     }
 
     /**
-     * Check if string is JSON
+     * Check if JSON string is valid.
+     * IMPORTANT: Keeping this here for backward compatibility, function moved to JSON class.
      *
      * @param string $string
      * @return boolean
      */
     public static function isJson($string)
     {
-        json_decode($string);
-        return ( json_last_error() == JSON_ERROR_NONE );
+        return JSON::isValid($string);
     }
 }
