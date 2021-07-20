@@ -26,6 +26,10 @@ class Ajax
         self::$response = new \stdClass();
         self::$response->status = 200;
         self::$response->message = '';
+        self::$response->notice = '';
+        self::$response->error = '';
+        self::$response->data = '';
+        self::$response->content = '';
     }
 
     public static function setResponse($field, $value)
